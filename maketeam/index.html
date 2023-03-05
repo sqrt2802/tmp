@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配战队</title>
+  <style type="text/css">
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    }
+
+    textarea {
+      width: 100%;
+      font-family: "SF Mono", Consolas, monospace, sans-serif;
+      resize: none;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+
+    div.w300 {
+      margin: 10px;
+      margin-top: 0px;
+      width: 350px;
+      height: 100%;
+    }
+
+    div.w300>* {
+      margin-top: 10px;
+      left: 100px;
+      width: 100%;
+    }
+
+    div.w300.res {
+      width: 500px;
+    }
+
+    div.a100>#fix {
+      width: 100%;
+      height: 70px;
+    }
+
+    div.a100>#ran {
+      width: 100%;
+      height: 500px;
+    }
+
+    div.a100>input {
+      width: 100%;
+    }
+  </style>
+  <script src="team_making.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="w300 settings" style="margin-left: 30px;">
+      <div class="a100">固定<textarea type="text" id="fix" value=""></textarea>
+      </div>
+      <div class="a100">随机<textarea type="text" id="ran" value=""></textarea>
+      </div>
+    </div>
+    <div
+      style="float:left;margin:20px;margin-top: 20px;width: 1px;height: 90%; background: darkgray;">
+    </div>
+    <div class="w300 settings">
+      <div class="a100">战队人数<input type="text" id="tot" value="5"></input></div>
+      <div class="a100">最低评分（将会输出高于这个分数的组合）<input type="text" id="threshold"
+          value="6000"></input></div>
+      <div class="a100">多开（1~4）<input type="text" id="windows" value="2"></input></div>
+      <div>
+        <input type="checkbox" class="autosave" value="autosave">每隔 10
+        分钟自动下载结果</input></div>
+      <button onclick="start()" id="start">开始</button>
+    </div>
+    <div
+      style="float:left;margin:20px;margin-top: 20px;width: 1px;height: 90%; background: darkgray;">
+    </div>
+    <div class="w300 res">
+      <div class="a100">结果</div>
+      <button onclick="save()" class="save">下载结果</button>
+      <textarea class="result" placeholder="结果将会显示在这里" readonly
+        style="height: 550px;"></textarea>
+    </div>
+  </div>
+</body>
+
+</html>

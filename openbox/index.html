@@ -198,6 +198,14 @@ button:hover,.button:hover {
   height:65px;
 }
 .goBtn {
+  position:absolute;
+  left: 4px;
+}
+.addPlayer {
+  position:absolute;
+  right: 4px;
+}
+.openboxTrigger {
   font-weight: bold;
   font-size: 16px;
   width: 100px;
@@ -205,14 +213,6 @@ button:hover,.button:hover {
   left:0;
   right:0;
   margin:auto;
-}
-.addPlayer {
-  position:absolute;
-  right: 4px;
-}
-.openboxTrigger {
-  position:absolute;
-  right: 40px;
 }
 .openboxConfig {
   width:100%;
@@ -226,7 +226,7 @@ button:hover,.button:hover {
   text-align: center;
 }
 input {
-  width:25%;
+  width:17.5%;
 }
 .closeBtn {
   position:absolute;
@@ -237,6 +237,7 @@ input {
 
 
 div.checkBoss {
+  display: none;
   color: #fff;
   padding-left: 24px;
   line-height: 23px;
@@ -584,17 +585,23 @@ div.menuopen {
           </div>
           <div class='goBar'>
             <div class="svgicon checkBoss"></div>
-            <button class='goBtn'></button>
-            <button class='openboxTrigger' onclick="startOpenbox()">开箱</button>
+            <button class='micon goBtn'><div class="svgicon fastforward"></div></button>
+            <button class='openboxTrigger' onclick="startOpenbox()">开 箱</button>
             <button class='picon addPlayer'><div class="svgicon add"></div></button>
             <div class='openboxConfig'>
-              开箱配置:
+              筛选
               <select id='openboxType'>
                 <option selected>强评</option>
                 <option>强单</option>
               </select>
               阈值
               <input type="number" id="openboxFilter" value="5000" />
+              输出到
+              <select id='openboxOutput'>
+                <option selected>控制台</option>
+                <option>网页</option>
+                <option>输入框</option>
+              </select>
             </div>
           </div>
 

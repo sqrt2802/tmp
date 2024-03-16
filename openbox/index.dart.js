@@ -308,10 +308,9 @@ n.cy=t.Y.a(r.querySelector(".mdframe"))
 n.db=p.a(r.querySelector(".ad_h"))
 n.dx=p.a(r.querySelector(".ad_v"))
 r.querySelector("#inputtitle").textContent=O.J("MiIa")
-s.placeholder=O.J("Pvyn")
+s.placeholder="输入要开箱的名字\n\n按\"开箱\"按钮开始"
 s=o.a(r.querySelector(".goBtn"))
 n.e=s
-s.textContent=O.J("ZeAN")
 W.K(s,d,n.gdl(),!1)
 s=p.a(r.querySelector(".controlbar"))
 n.f=s
@@ -4459,8 +4458,7 @@ c.aZ(p)
 document.adoptNode(p)
 return p},
 cH(a,b,c){return this.U(a,b,c,null)},
-b_(a,b,c){a.textContent=null
-a.appendChild(this.U(a,b,null,c))},
+b_(a,b,c){a.textContent=null},
 gbJ(a){return a.tagName},
 gbB(a){return new W.br(a,"mousedown",!1,t.G)},
 $io:1}
